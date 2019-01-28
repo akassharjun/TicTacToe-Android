@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:app = "http://schemas.android.com/apk/res-auto"
+	xmlns:tools = "http://schemas.android.com/tools"
+	android:layout_width = "match_parent"
+	android:layout_height = "wrap_content"
+	android:orientation = "vertical">
+	
+	<com.google.android.material.card.MaterialCardView
+		android:layout_width = "350dp"
+		android:layout_height = "wrap_content"
+		android:layout_gravity = "center"
+		app:cardBackgroundColor = "@color/lightBackground"
+		app:cardPreventCornerOverlap = "false">
+		
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width = "match_parent"
+			android:layout_height = "match_parent">
+			
+			<LinearLayout
+				android:layout_width = "match_parent"
+				android:layout_height = "wrap_content"
+				android:layout_marginStart = "8dp"
+				android:layout_marginTop = "16dp"
+				android:layout_marginEnd = "8dp"
+				android:layout_marginBottom = "24dp"
+				android:orientation = "horizontal"
+				app:layout_constraintBottom_toBottomOf = "parent"
+				app:layout_constraintEnd_toEndOf = "parent"
+				app:layout_constraintStart_toStartOf = "parent"
+				app:layout_constraintTop_toBottomOf = "@+id/message">
+				
+				<Button
+					android:id = "@+id/playAgain"
+					android:layout_width = "100dp"
+					android:layout_height = "wrap_content"
+					android:layout_margin = "10dp"
+					android:layout_weight = "1"
+					android:backgroundTint = "@color/colorO"
+					android:text = "Play Again?"
+					tools:layout_editor_absoluteY = "142dp" />
+				
+				<Button
+					android:id = "@+id/quit"
+					android:layout_width = "100dp"
+					android:layout_height = "wrap_content"
+					android:layout_margin = "10dp"
+					android:layout_weight = "1"
+					android:backgroundTint = "@color/colorX"
+					android:text = "Quit"
+					tools:layout_editor_absoluteY = "142dp" />
+			</LinearLayout>
+			
+			<View
+				android:id = "@+id/view2"
+				android:layout_width = "wrap_content"
+				android:layout_height = "75dp"
+				android:background = "@color/colorPrimary"
+				app:layout_constraintEnd_toEndOf = "parent"
+				app:layout_constraintStart_toStartOf = "parent"
+				app:layout_constraintTop_toTopOf = "parent" />
+			
+			<TextView
+				android:id = "@+id/textView2"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				android:layout_marginStart = "8dp"
+				android:layout_marginTop = "8dp"
+				android:layout_marginEnd = "8dp"
+				android:layout_marginBottom = "8dp"
+				android:text = "GAME OVER"
+				android:textAppearance = "@style/TextAppearance.MaterialComponents.Headline6"
+				android:textColor = "@color/colorOnPrimary"
+				app:layout_constraintBottom_toBottomOf = "@+id/view2"
+				app:layout_constraintEnd_toEndOf = "parent"
+				app:layout_constraintStart_toStartOf = "parent"
+				app:layout_constraintTop_toTopOf = "parent" />
+			
+			<TextView
+				android:id = "@+id/message"
+				style = "@style/TextAppearance.MaterialComponents.Headline6"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				android:layout_marginStart = "8dp"
+				android:layout_marginTop = "24dp"
+				android:layout_marginEnd = "8dp"
+				android:text = "Message"
+				app:layout_constraintEnd_toEndOf = "parent"
+				app:layout_constraintStart_toStartOf = "parent"
+				app:layout_constraintTop_toBottomOf = "@+id/view2" />
+		
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</com.google.android.material.card.MaterialCardView>
+	
+	
+</LinearLayout>

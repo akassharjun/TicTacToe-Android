@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:app = "http://schemas.android.com/apk/res-auto"
+	xmlns:tools = "http://schemas.android.com/tools"
+	android:layout_width = "match_parent"
+	android:layout_height = "match_parent"
+	tools:context = ".MainActivity">
+	
+	
+	<include
+		android:id = "@+id/include2"
+		layout = "@layout/toolbar" />
+	
+	<ImageView
+		android:id = "@+id/imageView"
+		android:layout_width = "0dp"
+		android:layout_height = "0dp"
+		android:layout_marginEnd = "8dp"
+		app:layout_constraintBottom_toBottomOf = "parent"
+		app:layout_constraintDimensionRatio = "2:1"
+		app:layout_constraintEnd_toEndOf = "parent"
+		app:layout_constraintStart_toStartOf = "parent"
+		app:layout_constraintTop_toBottomOf = "@+id/include2"
+		app:layout_constraintVertical_bias = "0.18"
+		app:srcCompat = "@drawable/ic_logo" />
+	
+	<TextView
+		android:id = "@+id/textView"
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:layout_marginTop = "50dp"
+		android:text = "SELECT A GAME MODE"
+		android:textAppearance = "@style/Base.TextAppearance.MaterialComponents.Headline6"
+		android:textColor = "@color/colorOnPrimary"
+		app:layout_constraintLeft_toLeftOf = "parent"
+		app:layout_constraintRight_toRightOf = "parent"
+		app:layout_constraintTop_toBottomOf = "@+id/imageView" />
+	
+	<Button
+		android:id = "@+id/vsComputer"
+		android:layout_width = "250dp"
+		android:layout_height = "wrap_content"
+		android:layout_marginStart = "8dp"
+		android:layout_marginTop = "32dp"
+		android:layout_marginEnd = "8dp"
+		android:layout_marginBottom = "8dp"
+		android:padding = "20dp"
+		android:text = "VS Computer"
+		android:textSize = "25dp"
+		app:layout_constraintBottom_toTopOf = "@+id/vsPlayer"
+		app:layout_constraintEnd_toEndOf = "parent"
+		app:layout_constraintStart_toStartOf = "parent"
+		app:layout_constraintTop_toBottomOf = "@+id/textView" />
+	
+	<Button
+		android:id = "@+id/vsPlayer"
+		android:layout_width = "250dp"
+		android:layout_height = "wrap_content"
+		android:layout_marginStart = "8dp"
+		android:layout_marginTop = "8dp"
+		android:layout_marginEnd = "8dp"
+		android:layout_marginBottom = "8dp"
+		android:padding = "20dp"
+		android:text = "VS PLAYER"
+		android:textSize = "25dp"
+		app:layout_constraintBottom_toBottomOf = "parent"
+		app:layout_constraintEnd_toEndOf = "parent"
+		app:layout_constraintStart_toStartOf = "parent"
+		app:layout_constraintTop_toBottomOf = "@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

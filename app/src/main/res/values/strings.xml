@@ -1,0 +1,7 @@
+<resources>
+	<string name = "app_name">TicTacToe</string>
+	<string name = "vs_computer_title">VS Computer</string>
+	<string name = "player_won">You won!</string>
+	<string name = "computer_won">The computer won!</string>
+	<string name = "draw">The game was a draw!</string>
+</resources>
