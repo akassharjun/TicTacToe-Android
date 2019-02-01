@@ -3,9 +3,6 @@ package com.github.zkashu.tictactoe;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -13,16 +10,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Arrays;
 import java.util.Objects;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AlertDialog.Builder;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class Frag extends AppCompatActivity implements View.OnClickListener {
+public class VSComputerActivity extends AppCompatActivity implements View.OnClickListener {
 	
 	TicTacToe ticTacToe;
 	
@@ -30,7 +25,7 @@ public class Frag extends AppCompatActivity implements View.OnClickListener {
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_frag);
+		setContentView(R.layout.activity_vs_computer);
 		
 		TextView tv = findViewById(R.id.header);
 		
@@ -88,7 +83,7 @@ public class Frag extends AppCompatActivity implements View.OnClickListener {
 	
 	public void showTokenDialog () {
 		final View view = getLayoutInflater().inflate(R.layout.dialog_token, null);
-		AlertDialog tokenDialog = new Builder(Frag.this).create();
+		AlertDialog tokenDialog = new Builder(VSComputerActivity.this).create();
 		Objects.requireNonNull(tokenDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0x00000000));
 		
 		ImageButton tokenO = view.findViewById(R.id.tokenO);
@@ -113,7 +108,7 @@ public class Frag extends AppCompatActivity implements View.OnClickListener {
 	
 	private void showGameOverDialog (char token) {
 		final View view = getLayoutInflater().inflate(R.layout.dialog_game_over, null);
-		AlertDialog tokenDialog = new Builder(Frag.this).create();
+		AlertDialog tokenDialog = new Builder(VSComputerActivity.this).create();
 		Objects.requireNonNull(tokenDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0x00000000));
 		
 		TextView message = view.findViewById(R.id.message);

@@ -64,7 +64,44 @@ public class TicTacToe {
 		
 	}
 	
-	public int computerMoveEasy() {
+	public String getWinRow () {
+		
+		if (board[1] == board[2] && board[2] == board[3]) {
+			return "FIRST_ROW";
+		}
+		
+		if (board[4] == board[5] && board[5] == board[7]) {
+			return "SECOND_ROW";
+		}
+		
+		if (board[7] == board[8] && board[8] == board[9]) {
+			return "THIRD_ROW";
+		}
+		
+		if (board[1] == board[4] && board[4] == board[7]) {
+			return "FIRST_COLUMN";
+		}
+		
+		if (board[2] == board[5] && board[5] == board[8]) {
+			return "SECOND_COLUMN";
+		}
+		
+		if (board[3] == board[6] && board[6] == board[9]) {
+			return "THIRD_COLUMN";
+		}
+		
+		if (board[1] == board[5] && board[5] == board[9]) {
+			return "FIRST_DIAGONAL";
+		}
+		
+		if (board[3] == board[5] && board[5] == board[7]) {
+			return "SECOND_DIAGONAL";
+		}
+		
+		return "NO MATCH";
+	}
+	
+	public int computerMoveEasy () {
 		
 		
 		List<Character> possibleMoves = new ArrayList<>();

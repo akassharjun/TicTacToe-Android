@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import java.util.Objects;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -24,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 		
 		
 		vsComputer.setOnClickListener(v -> {
-			Intent intent = new Intent(this, Frag.class);
+			Intent intent = new Intent(this, VSComputerActivity.class);
 			
 			intent.putExtra("mode", "normal");
 			
