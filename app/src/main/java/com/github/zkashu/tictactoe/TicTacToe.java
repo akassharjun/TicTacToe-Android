@@ -13,8 +13,7 @@ public class TicTacToe {
 	
 	char playerToken;
 	char computerToken;
-	char playerOneToken;
-	char playerTwoToken;
+	
 	char[] board = new char[]{'-', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 	
 	public TicTacToe (char playerToken, char computerToken) {
@@ -63,6 +62,23 @@ public class TicTacToe {
 				       (board[1] == token && board[5] == token && board[9] == token) || // Left To Right (Diagonal)
 				       (board[3] == token && board[5] == token && board[7] == token);
 		
+	}
+	
+	public int computerMoveEasy() {
+		
+		
+		List<Character> possibleMoves = new ArrayList<>();
+		
+		for (char c : board) {
+			if (Character.isDigit(c)) {
+				Log.d("POSSIBLE MOVE", Character.toString(c));
+				possibleMoves.add(c);
+			}
+		}
+		
+		int randomIndex = new Random().nextInt(possibleMoves.size());
+		
+		return Character.getNumericValue(possibleMoves.get(randomIndex));
 	}
 	
 	public int computerMove () {

@@ -62,7 +62,7 @@
 					android:layout_margin = "15dp"
 					android:layout_weight = "1"
 					android:background = "@color/transparent"
-					app:srcCompat = "@drawable/ic_default_token_o" />
+					app:srcCompat = "@drawable/ic_token_o" />
 				
 				<ImageButton
 					android:id = "@+id/tokenX"

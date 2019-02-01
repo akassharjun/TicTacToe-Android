@@ -102,7 +102,7 @@ public class VSComputerActivity extends AppCompatActivity implements OnClickList
 			ImageButton button = findViewById(id);
 			
 			if (token == 'O') {
-				button.setImageResource(R.drawable.ic_default_token_o);
+				button.setImageResource(R.drawable.ic_token_o);
 			} else {
 				button.setImageResource(R.drawable.ic_token_x);
 			}

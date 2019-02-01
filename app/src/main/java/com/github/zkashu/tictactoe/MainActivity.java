@@ -22,12 +22,14 @@ public class MainActivity extends AppCompatActivity {
 		
 		setSupportActionBar(toolbar);
 		
-		Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 		
-		
-		
-		
-		vsComputer.setOnClickListener(v -> startActivity(new Intent(this, VSComputerActivity.class)));
+		vsComputer.setOnClickListener(v -> {
+			Intent intent = new Intent(this, Frag.class);
+			
+			intent.putExtra("mode", "normal");
+			
+			startActivity(intent);
+		});
 		
 	}
 }
