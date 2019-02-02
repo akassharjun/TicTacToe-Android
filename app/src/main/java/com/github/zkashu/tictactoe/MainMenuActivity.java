@@ -7,14 +7,15 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainMenuActivity extends AppCompatActivity {
 	
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main_menu);
 		
 		Button vsComputer = findViewById(R.id.vsComputer);
+		Button vsPlayer = findViewById(R.id.vsPlayer);
 		
 		Toolbar toolbar = findViewById(R.id.toolbar);
 		
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 			
 			startActivity(intent);
 		});
+		
+		vsPlayer.setOnClickListener(v -> startActivity(new Intent(this, VSPlayerActivity.class)));
+		
 		
 	}
 }

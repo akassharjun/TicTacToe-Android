@@ -2,7 +2,6 @@ package com.github.zkashu.tictactoe;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -20,12 +19,12 @@ import androidx.appcompat.widget.Toolbar;
 public class VSComputerActivity extends AppCompatActivity implements View.OnClickListener {
 	
 	TicTacToe ticTacToe;
-	
+	String difficulty;
 	
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_vs_computer);
+		setContentView(R.layout.activity_game);
 		
 		TextView tv = findViewById(R.id.header);
 		
@@ -39,24 +38,26 @@ public class VSComputerActivity extends AppCompatActivity implements View.OnClic
 		
 		showTokenDialog();
 		
+		difficulty = getIntent().getStringExtra("difficulty");
+		
 		for (int i = 1; i < 10; i++) {
 			String name = "spot" + i;
 			int id = getResources().getIdentifier(name, "id", this.getPackageName());
 			findViewById(id).setOnClickListener(this::onClick);
 		}
 		
-		findViewById(R.id.back).setOnClickListener(v-> finish());
+		findViewById(R.id.back).setOnClickListener(v -> finish());
 		
 	}
 	
-	private void resetVisualBoard(){
+	private void resetVisualBoard () {
 		for (int i = 1; i < 10; i++) {
 			String spot = "spot" + i;
 			int id = getResources().getIdentifier(spot, "id", this.getPackageName());
 			
 			ImageView imageView = findViewById(id);
 			
-			if (imageView.getDrawable() != null){
+			if (imageView.getDrawable() != null) {
 				imageView.setImageDrawable(null);
 			}
 			
@@ -82,7 +83,7 @@ public class VSComputerActivity extends AppCompatActivity implements View.OnClic
 	}
 	
 	public void showTokenDialog () {
-		final View view = getLayoutInflater().inflate(R.layout.dialog_token, null);
+		final View view = getLayoutInflater().inflate(R.layout.dialog_select_token, null);
 		AlertDialog tokenDialog = new Builder(VSComputerActivity.this).create();
 		Objects.requireNonNull(tokenDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0x00000000));
 		
@@ -107,6 +108,8 @@ public class VSComputerActivity extends AppCompatActivity implements View.OnClic
 	}
 	
 	private void showGameOverDialog (char token) {
+		
+		//initializing the game over alert dialog
 		final View view = getLayoutInflater().inflate(R.layout.dialog_game_over, null);
 		AlertDialog tokenDialog = new Builder(VSComputerActivity.this).create();
 		Objects.requireNonNull(tokenDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(0x00000000));
@@ -115,6 +118,8 @@ public class VSComputerActivity extends AppCompatActivity implements View.OnClic
 		
 		Button playAgain = view.findViewById(R.id.playAgain);
 		Button quit = view.findViewById(R.id.quit);
+		
+		// setting the final board of the tic tac toe board
 		
 		for (int pos = 1; pos < 10; pos++) {
 			
@@ -126,20 +131,14 @@ public class VSComputerActivity extends AppCompatActivity implements View.OnClic
 			String name = "pos" + pos;
 			int id = getResources().getIdentifier(name, "id", this.getPackageName());
 			
-			Log.d("ID", String.valueOf(id));
-			Log.d("ID NAME", name);
-			
 			ImageView imageView = view.findViewById(id);
 			
-			if (mainImageView.getDrawable() != null){
+			if (mainImageView.getDrawable() != null) {
 				imageView.setImageDrawable(mainImageView.getDrawable());
 			}
 		}
 		
-		Log.d("TYPE", ticTacToe.getWinRow());
-		
-		
-		
+		// setting the game over message
 		
 		if (ticTacToe.playerToken == token) {
 			message.setText(getString(R.string.player_won));
@@ -188,7 +187,14 @@ public class VSComputerActivity extends AppCompatActivity implements View.OnClic
 			
 			// Computer Move
 			
-			int move = ticTacToe.computerMove();
+			int move;
+			
+			if (difficulty.equalsIgnoreCase("EASY")) {
+				move = ticTacToe.computerMoveEasy();
+			} else {
+				move = ticTacToe.computerMove();
+			}
+			
 			ticTacToe.insertToken(move, ticTacToe.computerToken);
 			fillSpot(move, ticTacToe.computerToken);
 			

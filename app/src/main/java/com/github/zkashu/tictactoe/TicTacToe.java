@@ -13,6 +13,9 @@ public class TicTacToe {
 	
 	char playerToken;
 	char computerToken;
+	char playerOneToken;
+	char playerTwoToken;
+	boolean isPlayerOneTurn;
 	
 	char[] board = new char[]{'-', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 	
@@ -20,6 +23,13 @@ public class TicTacToe {
 		this.playerToken = playerToken;
 		this.computerToken = computerToken;
 	}
+	
+	public TicTacToe (char playerOneToken, char playerTwoToken, boolean isPlayerOneTurn) {
+		this.playerOneToken = playerOneToken;
+		this.playerTwoToken = playerTwoToken;
+		this.isPlayerOneTurn = isPlayerOneTurn;
+	}
+	
 	
 	public void resetBoard () {
 		board = new char[]{'-', '1', '2', '3', '4', '5', '6', '7', '8', '9'};

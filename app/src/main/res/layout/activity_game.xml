@@ -5,6 +5,66 @@
 	android:layout_height = "match_parent"
 	android:background = "@color/background">
 	
+	<LinearLayout
+		android:id = "@+id/playerTwoPointsLayer"
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:layout_marginStart = "8dp"
+		android:layout_marginTop = "8dp"
+		android:layout_marginEnd = "8dp"
+		android:layout_marginBottom = "8dp"
+		android:orientation = "vertical"
+		android:visibility = "gone"
+		app:layout_constraintBottom_toBottomOf = "parent"
+		app:layout_constraintEnd_toEndOf = "parent"
+		app:layout_constraintHorizontal_bias = "0.81"
+		app:layout_constraintStart_toStartOf = "parent"
+		app:layout_constraintTop_toBottomOf = "@+id/frameLayout">
+		
+		<TextView
+			android:id = "@+id/p2header"
+			android:layout_width = "match_parent"
+			android:layout_height = "wrap_content"
+			android:text = "Player 2's Points" />
+		
+		<TextView
+			android:id = "@+id/playerTwoPoints"
+			style = "@style/Base.TextAppearance.MaterialComponents.Headline6"
+			android:layout_width = "match_parent"
+			android:layout_height = "wrap_content"
+			android:text = "10 pts"
+			android:textAlignment = "center" />
+	</LinearLayout>
+	
+	<LinearLayout
+		android:id = "@+id/playerOnePointsLayer"
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:layout_marginEnd = "8dp"
+		android:layout_marginBottom = "8dp"
+		android:orientation = "vertical"
+		android:visibility = "gone"
+		app:layout_constraintBottom_toBottomOf = "parent"
+		app:layout_constraintEnd_toEndOf = "parent"
+		app:layout_constraintHorizontal_bias = "0.2"
+		app:layout_constraintStart_toStartOf = "parent"
+		app:layout_constraintTop_toBottomOf = "@+id/frameLayout">
+		
+		<TextView
+			android:id = "@+id/p1header"
+			android:layout_width = "match_parent"
+			android:layout_height = "wrap_content"
+			android:text = "Player 1's Points" />
+		
+		<TextView
+			android:id = "@+id/playerOnePoints"
+			style = "@style/Base.TextAppearance.MaterialComponents.Headline6"
+			android:layout_width = "match_parent"
+			android:layout_height = "wrap_content"
+			android:text = "50 pts"
+			android:textAlignment = "center" />
+	</LinearLayout>
+	
 	<include
 		android:id = "@+id/include2"
 		layout = "@layout/toolbar"
@@ -43,6 +103,22 @@
 		app:layout_constraintStart_toStartOf = "parent"
 		app:layout_constraintTop_toTopOf = "parent"
 		app:srcCompat = "@drawable/ic_back" />
+	
+	<TextView
+		android:id = "@+id/turnHeader"
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:layout_marginStart = "8dp"
+		android:layout_marginTop = "8dp"
+		android:layout_marginEnd = "8dp"
+		android:layout_marginBottom = "8dp"
+		android:text = "Player 1's turn. (O)"
+		android:visibility="gone"
+		style="@style/Base.TextAppearance.MaterialComponents.Headline6"
+		app:layout_constraintBottom_toTopOf = "@+id/frameLayout"
+		app:layout_constraintEnd_toEndOf = "parent"
+		app:layout_constraintStart_toStartOf = "parent"
+		app:layout_constraintTop_toBottomOf = "@+id/include2" />
 	
 	<FrameLayout xmlns:android = "http://schemas.android.com/apk/res/android"
 		android:id = "@+id/frameLayout"
