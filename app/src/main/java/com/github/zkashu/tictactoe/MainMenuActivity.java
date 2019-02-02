@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 		vsComputer.setOnClickListener(v -> {
 			Intent intent = new Intent(this, VSComputerActivity.class);
 			
-			intent.putExtra("mode", "normal");
+			intent.putExtra("difficulty", "easy");
 			
 			startActivity(intent);
 		});
